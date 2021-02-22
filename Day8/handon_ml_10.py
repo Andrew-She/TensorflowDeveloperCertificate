@@ -46,6 +46,9 @@ model.save("my_fashin_mnist_model.h5")
 pre_model = tf.keras.models.load_model("my_callback_model.h5")
 pre_model.evaluate(x_test, y_test)
 print(pre_model)
+
+tf.saved_model.save(model,"my_tf_fashin_mnist_model")
+tf.saved_model.load("my_tf_fashin_mnist_model")
 #plot loss and acc
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']
